@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2DBF7420-D606-40CF-99F1-CEB7EE212CE0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EWay.Api</RootNamespace>
+    <AssemblyName>EWay.Api</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Build\EWay.Api.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ewayapi.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clients\BaseClient.cs" />
+    <Compile Include="Clients\DirectConnectionClient.cs" />
+    <Compile Include="Clients\ResponsiveSharedClient.cs" />
+    <Compile Include="Clients\PreAuthClient.cs" />
+    <Compile Include="Clients\TransparentRedirectClient.cs" />
+    <Compile Include="Endpoints.cs" />
+    <Compile Include="Model\BeagleVerification.cs" />
+    <Compile Include="Model\CardDetails.cs" />
+    <Compile Include="Model\CustomerResponse.cs" />
+    <Compile Include="Model\Methods.cs" />
+    <Compile Include="Model\Request\BaseRequest.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\Option.cs" />
+    <Compile Include="Model\Payment.cs" />
+    <Compile Include="Model\Request\DirectConnectionRequest.cs" />
+    <Compile Include="Model\Request\RefundRequest.cs" />
+    <Compile Include="Model\Request\SharedPageRequest.cs" />
+    <Compile Include="Model\Request\TransparentRedirectRequest.cs" />
+    <Compile Include="Model\Response\AccessResponse.cs" />
+    <Compile Include="Model\Response\BaseCreateCodeResponse.cs" />
+    <Compile Include="Model\Response\BaseResponse.cs" />
+    <Compile Include="Model\Response\DirectConnectionResponse.cs" />
+    <Compile Include="Model\Response\IAccessResponse.cs" />
+    <Compile Include="Model\Response\SharedPageResponse.cs" />
+    <Compile Include="Model\Response\TransactionQueryResponse.cs" />
+    <Compile Include="Model\Response\TransparentRedirectResponse.cs" />
+    <Compile Include="Model\ShippingAddress.cs" />
+    <Compile Include="Model\TransactionType.cs" />
+    <Compile Include="Model\Verification.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ewayapi.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
