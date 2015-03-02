@@ -1,6 +1,4 @@
 ﻿
-using System.Security.Principal;
-
 namespace EWay.Api.Model
 {
     /// <summary>

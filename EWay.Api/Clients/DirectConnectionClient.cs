@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using EWay.Api.Model.Response;
 
 namespace EWay.Api.Clients
@@ -11,7 +7,7 @@ namespace EWay.Api.Clients
     /// <summary>
     /// Client for the Direct Connection endpoint
     /// </summary>
-    public class DirectConnectionClient : BaseClient
+    public class DirectConnectionClient : BasePaymentClient
     {
         internal override string ClientEndpointName
         {
@@ -39,5 +35,12 @@ namespace EWay.Api.Clients
         {
         }
 
+        /// <summary>
+        /// Not implemented for Direct Connections.
+        /// </summary>
+        public override AccessResponse GetAccessCodeResult(string accessCode)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

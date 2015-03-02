@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
+using EWay.Api.Model.Request;
 using EWay.Api.Model.Response;
 
 namespace EWay.Api.Clients
@@ -13,11 +9,6 @@ namespace EWay.Api.Clients
     /// </summary>
     public class PreAuthClient : BaseClient
     {
-        internal override string ClientEndpointName
-        {
-            get { return "CapturePayment"; }
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="PreAuthClient"/> class.
         /// </summary>
@@ -37,6 +28,26 @@ namespace EWay.Api.Clients
         public PreAuthClient(NetworkCredential credential, bool sandbox = false)
             : base(credential, sandbox)
         {
+        }
+
+        /// <summary>
+        /// Completes a pre-authorised payment.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns></returns>
+        public PreAuthResponse CapturePayment(PreAuthRequest request)
+        {
+            return RunHttpRequest<PreAuthResponse>(null, string.Format(Sandbox ? Endpoints.SandboxUrlFormat : Endpoints.LiveUrlFormat, "CapturePayment"));
+        }
+
+        /// <summary>
+        /// Cancels a pre-authorised payment.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns></returns>
+        public PreAuthResponse CancelAuthorisation(PreAuthRequest request)
+        {
+            return RunHttpRequest<PreAuthResponse>(null, string.Format(Sandbox ? Endpoints.SandboxUrlFormat : Endpoints.LiveUrlFormat, "CancelAuthorisation"));
         }
     }
 }

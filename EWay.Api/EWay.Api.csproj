@@ -50,7 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clients\BasePaymentClient.cs" />
     <Compile Include="Clients\BaseClient.cs" />
+    <Compile Include="Clients\SettlementClient.cs" />
+    <Compile Include="Clients\TokenClient.cs" />
+    <Compile Include="Clients\TransactionClient.cs" />
     <Compile Include="Clients\DirectConnectionClient.cs" />
     <Compile Include="Clients\ResponsiveSharedClient.cs" />
     <Compile Include="Clients\PreAuthClient.cs" />
@@ -66,17 +70,23 @@
     <Compile Include="Model\Option.cs" />
     <Compile Include="Model\Payment.cs" />
     <Compile Include="Model\Request\DirectConnectionRequest.cs" />
+    <Compile Include="Model\Request\SettlementRequest.cs" />
+    <Compile Include="Model\Request\PreAuthRequest.cs" />
     <Compile Include="Model\Request\RefundRequest.cs" />
     <Compile Include="Model\Request\SharedPageRequest.cs" />
     <Compile Include="Model\Request\TransparentRedirectRequest.cs" />
     <Compile Include="Model\Response\AccessResponse.cs" />
     <Compile Include="Model\Response\BaseCreateCodeResponse.cs" />
     <Compile Include="Model\Response\BaseResponse.cs" />
+    <Compile Include="Model\Response\SettlementResponse.cs" />
+    <Compile Include="Model\Response\PreAuthResponse.cs" />
     <Compile Include="Model\Response\DirectConnectionResponse.cs" />
     <Compile Include="Model\Response\IAccessResponse.cs" />
     <Compile Include="Model\Response\SharedPageResponse.cs" />
+    <Compile Include="Model\Response\CustomerQueryResponse.cs" />
     <Compile Include="Model\Response\TransactionQueryResponse.cs" />
     <Compile Include="Model\Response\TransparentRedirectResponse.cs" />
+    <Compile Include="Model\SettlementSummary.cs" />
     <Compile Include="Model\ShippingAddress.cs" />
     <Compile Include="Model\TransactionType.cs" />
     <Compile Include="Model\Verification.cs" />

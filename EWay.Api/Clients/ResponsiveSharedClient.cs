@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
 
 namespace EWay.Api.Clients
 {
     /// <summary>
     /// Client for the Responsive Shared page endpoint
     /// </summary>
-    public class ResponsiveSharedClient : BaseClient
+    public class ResponsiveSharedClient : BasePaymentClient
     {
         internal override string ClientEndpointName
         {

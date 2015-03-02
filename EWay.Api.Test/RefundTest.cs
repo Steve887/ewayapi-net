@@ -43,13 +43,15 @@ namespace EWay.Api.Test
             Assert.IsNull(accessResponse.Errors);
             Assert.IsTrue((bool)accessResponse.TransactionStatus);
 
+            var refundClient = new TransactionClient(CredentialUtils.GetTestCredentials(), true);
+
             var refundRequest = new RefundRequest();
             refundRequest = SetupRequest(refundRequest) as RefundRequest;
 
-            var refundResponse = client.RefundTransaction(refundRequest, accessResponse.TransactionID.ToString());
+            var refundResponse = refundClient.RefundTransaction(refundRequest, accessResponse.TransactionID.ToString());
             Assert.IsNull(refundResponse.Errors);
 
-            var queryResponse = client.QueryTransaction(accessResponse.TransactionID.ToString());
+            var queryResponse = refundClient.QueryTransaction(accessResponse.TransactionID.ToString());
 
             Assert.AreEqual(1, queryResponse.Transactions.Count);
             Assert.AreEqual(string.Empty, queryResponse.Errors);

@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using EWay.Api.Model.Response;
+﻿using System.Net;
 
 namespace EWay.Api.Clients
 {
     /// <summary>
     /// Client for the Transparent Redirect endpoint
     /// </summary>
-    public class TransparentRedirectClient : BaseClient
+    public class TransparentRedirectClient : BasePaymentClient
     {
         internal override string ClientEndpointName
         {
