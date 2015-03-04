@@ -9,11 +9,12 @@ namespace EWay.Api.Test.Utils
 {
     public static class TestUtils
     {
-        public static Customer CreateTestCustomer()
+        public static Customer CreateTestCustomer(long? tokenId = null)
         {
             var customer = new Customer
                                {
-                                   Reference = "A12345",
+                                   TokenCustomerID = tokenId,
+                                   Reference = "123",
                                    Title = "Mr.",
                                    FirstName = "John",
                                    LastName = "Smith",
@@ -45,7 +46,7 @@ namespace EWay.Api.Test.Utils
         {
             var payment = new Payment
                               {
-                                  TotalAmount = 1000, 
+                                  TotalAmount = 6000, 
                                   InvoiceNumber = "Inv 21540",
                                   InvoiceDescription = "Individual Invoice Description", 
                                   InvoiceReference = "513456", 
@@ -83,7 +84,7 @@ namespace EWay.Api.Test.Utils
                                Quantity = 1, 
                                UnitCost = 400,
                                Tax = 100, 
-                               Total = 500
+                               Total = 1000
                            };
 
             return item;

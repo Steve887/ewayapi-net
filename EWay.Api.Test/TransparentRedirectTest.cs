@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using EWay.Api.Clients;
 using EWay.Api.Model;
 using EWay.Api.Model.Request;
@@ -89,7 +85,7 @@ namespace EWay.Api.Test
             return request;
         }
 
-        private string SubmitPaymentForm(string url, string accessCode)
+        private void SubmitPaymentForm(string url, string accessCode)
         {
             string paymentType = "Credit Card";
             string cardName = "Test";
@@ -122,7 +118,7 @@ namespace EWay.Api.Test
             }
             catch (Exception e)
             {
-                return e.Message;
+                return;
             }
             finally
             {
@@ -134,7 +130,7 @@ namespace EWay.Api.Test
             {
                 result = sr.ReadToEnd();
             }
-            return result;
+            return;
         }
     }
 }

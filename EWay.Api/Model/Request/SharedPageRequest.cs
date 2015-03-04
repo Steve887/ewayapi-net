@@ -56,8 +56,8 @@ namespace EWay.Api.Model.Request
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedPageRequest"/> class.
         /// </summary>
-        /// <param name="redirectUrl">The redirect URL.</param>
-        /// <param name="cancelUrl">The cancel URL.</param>
+        /// <param name="redirectUrl">The URL that the shared page redirects to after a payment is processed.</param>
+        /// <param name="cancelUrl">The URL that the shared page redirects to if a customer cancels the transaction.</param>
         /// <param name="transactionType">Type of the transaction.</param>
         public SharedPageRequest(string redirectUrl, string cancelUrl, TransactionType transactionType)
             : base(transactionType)

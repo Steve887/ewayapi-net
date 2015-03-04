@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace EWay.Api.Model.Request
 {
@@ -16,11 +18,13 @@ namespace EWay.Api.Model.Request
         /// The action to perform with this request.
         /// One of: ProcessPayment, CreateTokenCustomer, UpdateTokenCustomer, TokenPayment, Authorise
         /// </summary>
-        internal Methods Method { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Methods Method { get; set; }
 
         /// <summary>
         /// The type of transaction being performed.
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
         public TransactionType TransactionType { get; set; }
 
         /// <summary>
